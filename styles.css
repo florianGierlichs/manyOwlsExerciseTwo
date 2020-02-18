@@ -22,6 +22,7 @@ h1 {
 }
 
 ul {
+  padding: 0;
   display: flex;
   list-style-type: none;
   justify-content: space-evenly;
@@ -44,19 +45,21 @@ ul :hover {
 
 main {
   display: flex;
+  flex-direction: column;
 }
 
 .article-container {
-  width: 80%;
+  width: 100%;
 }
 
 article {
   display: flex;
   border: solid 2px black;
+  flex-direction: column;
 }
 
 img {
-  width: 400px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -72,11 +75,34 @@ img {
 }
 
 aside {
-  width: 20%;
+  width: 100%;
   border: solid 2px black;
 }
 
 footer {
   border: solid 2px black;
   height: 100px;
+}
+
+/* DESKTOP */
+
+@media (min-width: 800px) {
+  main {
+    flex-direction: row;
+  }
+  .article-container {
+    width: 80%;
+  }
+  aside {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  article {
+    flex-direction: row;
+  }
+  img {
+    width: 100%;
+  }
 }
